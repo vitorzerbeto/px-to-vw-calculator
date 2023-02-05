@@ -18,16 +18,29 @@
       <div class="form">
         <form action="javascript:;" >
           <div>
-            <label for="viewport-size">Viewport size</label>
-            <input id="viewport-size" placeholder="375" />
-          </div>
-          <div>
             <label for="px-unit">Pixel Unit</label>
             <input id="px-unit" placeholder="16" />
           </div>
           <div>
-            <label for="result">Result</label>
-            <input id="result" placeholder="4.26vw" readonly />
+            <div>
+              <label for="viewport-width">Screen width size</label>
+              <input id="viewport-width" placeholder="375" value="375" />
+            </div>
+            <div>
+              <label for="result-vw">PX to VW</label>
+              <input id="result-vw" placeholder="4.26vw" readonly />
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="viewport-height">Screen height size</label>
+              <input id="viewport-height" placeholder="815" value="815" />
+            </div>
+            
+            <div>
+              <label for="result-vh">PX to VH</label>
+              <input id="result-vh" placeholder="4.26vh" readonly />
+            </div>
           </div>
         </form>
       </div>

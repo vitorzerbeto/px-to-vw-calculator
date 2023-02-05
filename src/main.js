@@ -1,6 +1,8 @@
 const pxUnitInput = document.getElementById('px-unit');
-const viewportSizeInput = document.getElementById('viewport-size');
-const resultInput = document.getElementById('result');
+const viewportWidthInput = document.getElementById('viewport-width');
+const viewportHeightInput = document.getElementById('viewport-height');
+const resultVwInput = document.getElementById('result-vw');
+const resultVhInput = document.getElementById('result-vh');
 
 function calculateResult(viewport, pxUnit) {
   const result = pxUnit / viewport * 100;
@@ -8,25 +10,30 @@ function calculateResult(viewport, pxUnit) {
   return Math.round((result + Number.EPSILON) * 100) / 100
 }
 
-function updateResultValue() {
-  const viewport = parseInt(viewportSizeInput.value);
+function updateResultValue(viewportInput, resultInput, unit) {
+  const viewport = parseInt(viewportInput.value);
   const pxUnit = parseInt(pxUnitInput.value);
 
   const result = calculateResult(viewport, pxUnit);
 
   if(!isNaN(result)) {
-    resultInput.value = `${result}vw`;
+    resultInput.value = `${result}${unit}`;
   }
 }
 
 pxUnitInput.addEventListener('input', () => {
-  updateResultValue()
+  updateResultValue(viewportWidthInput, resultVwInput, 'vw');
+  updateResultValue(viewportHeightInput, resultVhInput, 'vh');
 });
 
-viewportSizeInput.addEventListener('input', () => {
-  updateResultValue()
+viewportWidthInput.addEventListener('input', (e) => {
+  updateResultValue(e.target, resultVwInput, 'vw');
 });
 
-resultInput.addEventListener('click', (e) => {
+viewportHeightInput.addEventListener('input', (e) => {
+  updateResultValue(e.target, resultVhInput, 'vh');
+});
+
+resultVwInput.addEventListener('click', (e) => {
   e.target.select();
 });
