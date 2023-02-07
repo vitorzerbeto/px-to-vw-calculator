@@ -1,52 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/styles/reset.css" />
-  <link rel="stylesheet" href="./assets/styles/main.css" />
-  <title>PX to VW/VH - Calculator</title>
-</head>
-<body>
-  <main>
-    <div id="container">
-      <div class="device"></div>
-      <div class="form">
-        <form action="javascript:;" >
-          <div>
-            <label for="px-unit">Pixel Unit</label>
-            <input id="px-unit" placeholder="16" />
-          </div>
-          <div>
-            <div>
-              <label for="viewport-width">Screen width size</label>
-              <input id="viewport-width" placeholder="375" value="375" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <title>PX to VW/VH - Calculator</title>
+  </head>
+  <body>
+    <main>
+      <div id="container">
+        <div class="device-wrap">
+          <div id="device" style="opacity: 0"></div>
+          <span id="display-screen-size"></span>
+        </div>
+        <div class="form">
+          <form action="javascript:;">
+            <div class="input-block px-unit">
+              <label for="px-unit">Pixels</label>
+              <input
+                id="px-unit"
+                placeholder="Insert the pixel value"
+                value="16"
+              />
             </div>
-            <div>
-              <label for="result-vw">PX to VW</label>
-              <input id="result-vw" placeholder="4.26vw" readonly />
+            <div class="input-block width-sz">
+              <label for="viewport-width">Screen width</label>
+              <input
+                id="viewport-width"
+                placeholder="Insert the screen width"
+                value="375"
+              />
             </div>
-          </div>
-          <div>
-            <div>
-              <label for="viewport-height">Screen height size</label>
-              <input id="viewport-height" placeholder="815" value="815" />
+            <div class="input-block height-sz">
+              <label for="viewport-height">Screen height</label>
+              <input
+                id="viewport-height"
+                placeholder="Insert the screen height"
+                value="815"
+              />
             </div>
-            
-            <div>
-              <label for="result-vh">PX to VH</label>
-              <input id="result-vh" placeholder="4.26vh" readonly />
+            <div class="input-block vw-unit">
+              <label for="result-vw">VW</label>
+              <input id="result-vw" placeholder="0vw" value="4.26vw" readonly />
             </div>
-          </div>
-        </form>
+            <div class="input-block vh-unit">
+              <label for="result-vh">VH</label>
+              <input id="result-vh" placeholder="0vh" value="4.26vh" readonly />
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <script src="./src/main.js"></script>
-</body>
+    <script src="./src/main.js"></script>
+  </body>
 </html>

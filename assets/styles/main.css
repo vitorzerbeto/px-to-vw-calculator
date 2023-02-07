@@ -1,4 +1,145 @@
+:root {
+  --black: #191919;
+  --gray: #504f4f;
+  --gray-light: #cccccc;
+}
+
 html * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--black);
+}
+
+#container {
+  max-width: 1367px;
+  height: 90vh;
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.device-wrap {
+  width: 60%;
+  height: 100%;
+  position: relative;
+}
+
+#device {
+  border: 10px solid var(--gray-light);
+  border-radius: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+#device.mobile::before {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 30px;
+  background-color: var(--gray-light);
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  top: -1px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+#display-screen-size {
+  color: var(--gray-light);
+  font-size: 24px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+/*** FORM ***/
+.form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  display: grid;
+  grid-gap: 20px;
+  width: 100%;
+
+  grid-template:
+    "px-unit px-unit"
+    "width-sz height-sz"
+    "vw-unit vh-unit";
+}
+
+.px-unit {
+  grid-area: px-unit;
+}
+.width-sz {
+  grid-area: width-sz;
+}
+.height-sz {
+  grid-area: height-sz;
+}
+.vw-unit {
+  grid-area: vw-unit;
+}
+.vh-unit {
+  grid-area: vh-unit;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-block label {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.input-block input {
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid var(--gray);
+  color: var(--gray-light);
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1080px) {
+  .form {
+    width: 60%;
+  }
+
+  .device-wrap {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 725px) {
+  #container {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  .device-wrap {
+    width: 100%;
+  }
+
+  .form {
+    margin-top: 20px;
+    width: 100%;
+  }
 }
